@@ -1,0 +1,31 @@
+server:
+  port: 8301
+spring:
+  application:
+    name: service-vod
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:33006/glkt_vod?useSSL=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+tencent:
+  cos:
+    file:
+      region: ap-nanjing
+      secretid: AKID3yhEbkivxpV1OaZXPHVghWBdLxaH9tcG
+      secretkey: Yu7kNyb6bxLZb2Wq01rbCoSwEI9qpbBa
+      bucketname: sizuru-1302583246
